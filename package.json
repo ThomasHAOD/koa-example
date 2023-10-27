@@ -8,7 +8,8 @@
     "migrate": "npx prisma migrate dev",
     "env:start": "docker compose up --detach --build --wait && sleep 2",
     "env:stop": "docker compose down -v -t 0 && sleep 2",
-    "db:seed": "ts-node ./prisma/seed.ts"
+    "db:seed": "ts-node ./prisma/seed.ts",
+    "setup": "npm run env:start && npm run db:seed && npm run dev"
   },
   "keywords": [],
   "author": "",
