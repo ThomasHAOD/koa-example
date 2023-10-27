@@ -1,0 +1,37 @@
+{
+  "name": "middleware-best-practices",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./src/app.ts",
+    "migrate": "npx prisma migrate dev",
+    "env:start": "docker compose up --detach --build --wait && sleep 2",
+    "env:stop": "docker compose down -v -t 0 && sleep 2",
+    "db:seed": "ts-node ./prisma/seed.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/router": "^11.0.2",
+    "@prisma/client": "5.4.2",
+    "koa": "^2.14.2",
+    "koa-bodyparser": "^4.4.1"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.13.9",
+    "@types/koa-bodyparser": "^4.3.11",
+    "@types/koa__router": "^12.0.1",
+    "@types/node": "^20.8.6",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.3",
+    "prisma": "^5.4.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}
